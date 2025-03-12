@@ -17,6 +17,5 @@ public:
 	bool identical(Fraction fraction);
 	double approximation();
 	Fraction neg();
-
 };
 

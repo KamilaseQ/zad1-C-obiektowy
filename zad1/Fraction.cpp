@@ -90,7 +90,6 @@ void Fraction::simplify()
         int greatest_common_div = gcd(variable_numerator, variable_denominator);
         variable_numerator = variable_numerator / greatest_common_div;
         variable_denominator = variable_denominator / greatest_common_div;
-      
     }
         
 }

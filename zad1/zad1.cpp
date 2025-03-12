@@ -5,7 +5,7 @@
 
 int main()
 {
-
+	
 	Fraction fleft(1, 1000000);
 	Fraction fright(-1, 500000);
 	Fraction fcorrect(-1, 1000000);

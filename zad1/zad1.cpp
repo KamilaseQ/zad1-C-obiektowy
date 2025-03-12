@@ -6,11 +6,15 @@
 
 int main()
 {
-	Fraction ulamek(2,3);
-	Fraction ulamek2(1, 3);
+	Fraction ulamek(0,400);
+	Fraction ulamek2(4, 3);
 	Fraction ulamek_suma = ulamek.add(ulamek2);
+	//std::cout<<ulamek2.approximation()<<std::endl;
+	ulamek.print();
+	Fraction nowy =  ulamek2.neg();
+	nowy.print();
 
-	ulamek_suma.print();
+	//ulamek_suma.print();
 
 	Fraction fleft(1, 1000000);
 	Fraction fright(-1, 500000);

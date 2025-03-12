@@ -5,17 +5,17 @@ private:
 	int variable_numerator;
 	unsigned int variable_denominator;
 	void simplify();
-	int gcd(int number_one, int number_two);
+	int gcd(int number_one, int number_two) const;
 public:
 	Fraction(int numerator_number, unsigned int denominator_number);
-	int numerator();
-	unsigned int denominator();
-	void print();
-	Fraction add(Fraction fraction);
-	Fraction sub(Fraction fraction);
-	Fraction mul(Fraction fraction);
-	bool identical(Fraction fraction);
-	double approximation();
-	Fraction neg();
+	int numerator() const;
+	unsigned int denominator() const;
+	void print() const;
+	Fraction add(Fraction fraction) const;
+	Fraction sub(Fraction fraction) const;
+	Fraction mul(Fraction fraction) const;
+	bool identical(Fraction fraction) const;
+	double approximation() const;
+	Fraction neg() const;
 };
 

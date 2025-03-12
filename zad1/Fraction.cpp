@@ -1,5 +1,4 @@
 #include "Fraction.h"
-#include <string>
 #include <iostream>
 #include <cstdlib>
 
@@ -10,63 +9,64 @@ Fraction::Fraction(int numerator_number, unsigned int denominator_number)
     simplify();
 }
 
-void Fraction::print()
+void Fraction::print() const
 {
     std::cout << "Licznik: " << variable_numerator << " Mianownik: " << variable_denominator << std::endl;
 }
 
-int Fraction::numerator()
+int Fraction::numerator() const
 {
     return variable_numerator;
 }
 
-unsigned int Fraction::denominator()
+unsigned int Fraction::denominator() const
 {
     return variable_denominator;
 }
 
-double Fraction::approximation()
+double Fraction::approximation() const
 {
     double approximate_number = double(variable_numerator) / variable_denominator;
     return approximate_number;
 }
 
-Fraction Fraction::neg()
+Fraction Fraction::neg() const
 {
     int new_numerator = variable_numerator * -1;
     return Fraction(new_numerator, variable_denominator);
 }
 
-Fraction Fraction::add(Fraction fraction) 
+Fraction Fraction::add(Fraction fraction) const
 {
     int greatest_common_div = gcd(variable_denominator, fraction.denominator());
-    unsigned int common_denominator = (variable_denominator/ greatest_common_div) * fraction.denominator();
-    int sum = (variable_numerator * fraction.denominator())/ greatest_common_div + (fraction.numerator() * variable_denominator)/greatest_common_div;
+    unsigned int common_denominator = int(variable_denominator)/ int (greatest_common_div) * int(fraction.denominator());
+    int sum = int(variable_numerator) * int(fraction.denominator())/ int (greatest_common_div) + 
+        int(fraction.numerator()) * int(variable_denominator)/int(greatest_common_div);
     return Fraction(sum, common_denominator);
 }
 
-Fraction Fraction::sub(Fraction fraction)
+Fraction Fraction::sub(Fraction fraction) const
 {
     int greatest_common_div = gcd(variable_denominator, fraction.denominator());
-    unsigned int common_denominator = variable_denominator * fraction.denominator() / greatest_common_div;
-    int diff = variable_numerator * fraction.denominator()/ greatest_common_div - fraction.numerator() * variable_denominator/ greatest_common_div;
+    unsigned int common_denominator = int(variable_denominator) * int(fraction.denominator()) / int(greatest_common_div);
+    int diff = int(variable_numerator) * int(fraction.denominator())/ int(greatest_common_div) - 
+        int(fraction.numerator()) * int(variable_denominator)/ int(greatest_common_div);
     return Fraction(diff, common_denominator);
 }
 
-Fraction Fraction::mul(Fraction fraction)
+Fraction Fraction::mul(Fraction fraction) const
 {
-    int greatest_common_div = gcd(variable_denominator, fraction.denominator());
-    unsigned int new_denominator = variable_denominator / greatest_common_div * fraction.denominator();
+    unsigned int new_denominator = int(variable_denominator) * int(fraction.denominator());
     int new_numerator = variable_numerator * fraction.numerator();
     return Fraction(new_numerator, new_denominator);
 }
 
-bool Fraction::identical(Fraction fraction)
+bool Fraction::identical(Fraction fraction) const
 {
     return fraction.denominator() == variable_denominator && fraction.numerator() == variable_numerator;
 }
 
-int Fraction::gcd(int a, int b)
+int Fraction::gcd(int a, int b) const
 {
     a = std::abs(a);
     while (b != 0)

@@ -39,21 +39,24 @@ Fraction Fraction::neg()
 
 Fraction Fraction::add(Fraction fraction) 
 {
-    unsigned int common_denominator = variable_denominator * fraction.denominator();
-    int sum = variable_numerator * fraction.denominator() + fraction.numerator() * variable_denominator;
+    int greatest_common_div = gcd(variable_denominator, fraction.denominator());
+    unsigned int common_denominator = (variable_denominator/ greatest_common_div) * fraction.denominator();
+    int sum = (variable_numerator * fraction.denominator())/ greatest_common_div + (fraction.numerator() * variable_denominator)/greatest_common_div;
     return Fraction(sum, common_denominator);
 }
 
 Fraction Fraction::sub(Fraction fraction)
 {
-    unsigned int common_denominator = variable_denominator * fraction.denominator();
-    int diff = variable_numerator * fraction.denominator() - fraction.numerator() * variable_denominator;
+    int greatest_common_div = gcd(variable_denominator, fraction.denominator());
+    unsigned int common_denominator = variable_denominator * fraction.denominator() / greatest_common_div;
+    int diff = variable_numerator * fraction.denominator()/ greatest_common_div - fraction.numerator() * variable_denominator/ greatest_common_div;
     return Fraction(diff, common_denominator);
 }
 
 Fraction Fraction::mul(Fraction fraction)
 {
-    unsigned int new_denominator = variable_denominator * fraction.denominator();
+    int greatest_common_div = gcd(variable_denominator, fraction.denominator());
+    unsigned int new_denominator = variable_denominator / greatest_common_div * fraction.denominator();
     int new_numerator = variable_numerator * fraction.numerator();
     return Fraction(new_numerator, new_denominator);
 }

@@ -1,20 +1,10 @@
-﻿// zad1.cpp : Ten plik zawiera funkcję „main”. W nim rozpoczyna się i kończy wykonywanie programu.
-//
+﻿
 
 #include <iostream>
 #include "Fraction.h"
 
 int main()
 {
-	Fraction ulamek(0,400);
-	Fraction ulamek2(4, 3);
-	Fraction ulamek_suma = ulamek.add(ulamek2);
-	//std::cout<<ulamek2.approximation()<<std::endl;
-	ulamek.print();
-	Fraction nowy =  ulamek2.neg();
-	nowy.print();
-
-	//ulamek_suma.print();
 
 	Fraction fleft(1, 1000000);
 	Fraction fright(-1, 500000);
@@ -27,14 +17,3 @@ int main()
 		std::cout << "Error in add\n";
 	
 }
-
-// Uruchomienie programu: Ctrl + F5 lub menu Debugowanie > Uruchom bez debugowania
-// Debugowanie programu: F5 lub menu Debugowanie > Rozpocznij debugowanie
-
-// Porady dotyczące rozpoczynania pracy:
-//   1. Użyj okna Eksploratora rozwiązań, aby dodać pliki i zarządzać nimi
-//   2. Użyj okna programu Team Explorer, aby nawiązać połączenie z kontrolą źródła
-//   3. Użyj okna Dane wyjściowe, aby sprawdzić dane wyjściowe kompilacji i inne komunikaty
-//   4. Użyj okna Lista błędów, aby zobaczyć błędy
-//   5. Wybierz pozycję Projekt > Dodaj nowy element, aby utworzyć nowe pliki kodu, lub wybierz pozycję Projekt > Dodaj istniejący element, aby dodać istniejące pliku kodu do projektu
-//   6. Aby w przyszłości ponownie otworzyć ten projekt, przejdź do pozycji Plik > Otwórz > Projekt i wybierz plik sln
